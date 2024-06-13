@@ -21,8 +21,6 @@ The designs were created to the following widths:
 - Charcoal Grey: hsl(235, 18%, 26%)
 - Grey: hsl(231, 7%, 60%)
 - White: hsl(0, 0%, 100%)
-- gradient 1:#ff5572
-- gradient 2:#ff6841
 
 ## Typography
 
