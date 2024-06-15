@@ -115,8 +115,9 @@ input {
   border-style: solid;
   border: 2px solid var(--Grey);
   margin-bottom: 1.25rem;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 500;
+  color: var(--Dark-Slate-Grey);
 }
 
 input.colorPlace::-webkit-input-placeholder {
