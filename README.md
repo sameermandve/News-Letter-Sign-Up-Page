@@ -7,7 +7,7 @@ Created by Sameer Mandve.
 ## Overview -
 
 This is practice responsive "News-Letter-Sign-Up Page" created using HTML , CSS and JS.
-you will get error if email is empty or email address is invalid and the form will not be submitted. And After submitting the form you will get a confirmation message with your input email address and a dismiss button which you can use to go back to the sign up page.
+In this practice project you will get error if email is empty or email address is invalid and the form will not be submitted. And after submitting the form you will get a confirmation message with your input email address and a dismiss button which you can use to go back to the sign up page.
 
 ### Screenshot -
 
