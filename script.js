@@ -8,10 +8,7 @@ form.addEventListener("submit", (e) => {
   const signUp = document.querySelector("#wrapper");
 
   validateInput();
-  if (!validateInput) {
-    signUp.classList.remove("hidden");
-    successMsg.classList.remove("succeed");
-  } else {
+  if (validateInput()) {
     signUp.classList.add("hidden");
     successMsg.classList.add("succeed");
 
@@ -20,6 +17,8 @@ form.addEventListener("submit", (e) => {
     dismissBtn.addEventListener("click", () => {
       signUp.classList.remove("hidden");
       successMsg.classList.remove("succeed");
+      // formReset for clearing input field
+      form.reset();
     });
   }
 });
@@ -30,7 +29,8 @@ const setError = (element, message) => {
 
   inputControl.style.borderColor = "#ff3333";
   inputControl.style.color = "#ff3333";
-  inputControl.style.backgroundColor = "rgba(255,51,51,0.3)";
+  inputControl.style.backgroundColor = "rgba(255,51,51,0.2)";
+  inputControl.classList.add("colorPlace");
   errorMsg.innerText = message;
 };
 
@@ -40,7 +40,20 @@ const setSuccess = (element) => {
 
   inputControl.style.borderColor = "#4bb543";
   inputControl.style.color = "black";
-  inputControl.style.backgroundColor = "rgba(75,181,67,0.3)";
+  inputControl.style.backgroundColor = "rgba(75,181,67,0.2)";
+  errorMsg.innerText = "";
+};
+
+//For recovering borderColor, bgColor and placeholderColor of input after dismiss
+
+const setDefault = (element) => {
+  const inputControl = element;
+  const errorMsg = document.querySelector(".error-msg");
+
+  inputControl.style.borderColor = "grey";
+  inputControl.style.color = "black";
+  inputControl.style.backgroundColor = "white";
+  inputControl.classList.remove("colorPlace");
   errorMsg.innerText = "";
 };
 
@@ -52,6 +65,7 @@ const isValidEmail = (email) => {
 
 const validateInput = () => {
   const emailValue = email.value.trim();
+  const emailConfirm = document.querySelector("#email-confirm");
 
   if (emailValue === "") {
     setError(email, "Valid email required");
@@ -61,6 +75,8 @@ const validateInput = () => {
     return false;
   } else {
     setSuccess(email);
+    emailConfirm.innerText = emailValue;
+    setDefault(email);
     return true;
   }
 };

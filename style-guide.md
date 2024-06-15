@@ -13,7 +13,8 @@ The designs were created to the following widths:
 
 ### Primary
 
-- Tomato: hsl(4, 100%, 67%)
+-Button-Gradient1: #ff5572;
+-Button-Gradient2: #ff6841;
 
 ### Neutral
 
